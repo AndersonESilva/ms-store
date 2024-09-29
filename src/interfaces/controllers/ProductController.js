@@ -1,7 +1,8 @@
 class ProductController {
-    constructor(createProductService, getProductService) {
+    constructor(createProductService, getProductService, getAllProductsService) {
       this.createProductService = createProductService;
       this.getProductService = getProductService;
+      this.getAllProductsService = getAllProductsService;
     }
   
     async createProduct(req, res) {
@@ -13,6 +14,11 @@ class ProductController {
     async getProduct(req, res) {
       const product = await this.getProductService.execute(req.params.id);
       res.json(product);
+    }
+
+    async getAllProducts(req, res) {
+      const products = await this.getAllProductsService.execute();
+      res.json(products);
     }
   }
   

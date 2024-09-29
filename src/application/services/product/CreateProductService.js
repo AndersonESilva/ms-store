@@ -1,5 +1,5 @@
-const Price = require('../../domain/valueObjects/Price');
-const Product = require('../../domain/entities/Product');
+const Price = require('../../../domain/valueObjects/Price');
+const Product = require('../../../domain/entities/Product');
 
 class CreateProductService {
     constructor(productRepository) {

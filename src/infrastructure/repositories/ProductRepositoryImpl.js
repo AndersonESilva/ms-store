@@ -16,8 +16,7 @@ class ProductRepositoryImpl extends ProductRepository {
   }
 
   async findAll() {
-    const products = await this.Product.findAll();
-    return products.map(product => new Product(product.id, product.name, product.price));
+    return await this.Product.findAll();
   }
 
   async update(product) {

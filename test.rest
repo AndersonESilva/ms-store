@@ -12,3 +12,8 @@ Content-Type: application/json
 ###
 GET http://localhost:13000/api/products/6a44e9d5-35b9-4805-850d-7d975895cb44
 Content-Type: application/json
+
+
+###
+GET http://localhost:13000/api/products
+Content-Type: application/json

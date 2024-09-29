@@ -1,4 +1,4 @@
-const GetProductService = require('../../src/application/services/GetProductService');
+const GetProductService = require('../../src/application/services/product/GetProductService');
 const Product = require('../../src/domain/entities/Product');
 
 describe('GetProductService', () => {
