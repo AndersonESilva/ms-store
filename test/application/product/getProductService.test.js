@@ -1,5 +1,5 @@
-const GetProductService = require('../../src/application/services/product/GetProductService');
-const Product = require('../../src/domain/entities/Product');
+const GetProductService = require('../../../src/application/services/product/GetProductService');
+const Product = require('../../../src/domain/entities/Product');
 
 describe('GetProductService', () => {
   let productRepositoryMock;
