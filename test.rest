@@ -17,3 +17,8 @@ Content-Type: application/json
 ###
 GET http://localhost:13000/api/products
 Content-Type: application/json
+
+
+###
+DELETE http://localhost:13000/api/products/7b40ed64-6f87-4b5c-b804-5008353cc3aa
+Content-Type: application/json

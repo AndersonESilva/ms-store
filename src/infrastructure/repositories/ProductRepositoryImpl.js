@@ -26,6 +26,14 @@ class ProductRepositoryImpl extends ProductRepository {
     }
     return null;
   }
+
+  async delete(id) {
+    return await this.model.destroy({
+      where: {
+        id: id
+      }
+    });
+  }
 }
 
 module.exports = ProductRepositoryImpl;
