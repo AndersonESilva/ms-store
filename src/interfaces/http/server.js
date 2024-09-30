@@ -1,9 +1,8 @@
 const express = require('express');
-const productRoutes = require('../routes/productRoutes');
 const bodyParser = require('body-parser');
 
 const container = require('../../infrastructure/di/container');
-const controller = container.resolve('controller');
+const route = container.resolve('route');
 const database = container.resolve('database');
 
 const app = express();
@@ -11,7 +10,7 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-app.use('/api', productRoutes({controller}));
+app.use('/api', route.productRoutes);
 
 database.sequelize.authenticate()
   .then(() => {
