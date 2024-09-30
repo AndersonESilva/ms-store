@@ -22,3 +22,13 @@ Content-Type: application/json
 ###
 DELETE http://localhost:13000/api/products/7b40ed64-6f87-4b5c-b804-5008353cc3aa
 Content-Type: application/json
+
+###
+PUT http://localhost:13000/api/products/df11ba84-f054-4a76-aab9-28e07889b058
+Content-Type: application/json
+
+{
+    "name": "Test test",
+    "description": "99 hello world street",
+    "price": 99.11
+}

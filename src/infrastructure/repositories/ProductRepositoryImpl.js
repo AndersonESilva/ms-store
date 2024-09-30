@@ -19,12 +19,12 @@ class ProductRepositoryImpl extends ProductRepository {
     return await this.model.findAll();
   }
 
-  async update(product) {
-    const productToUpdate = await this.model.findById(product.id);
-    if (productToUpdate) {
-      return productToUpdate.update(product);
-    }
-    return null;
+  async update(id, product) {
+    return await this.model.update(product, {
+      where: {
+        id: id
+      }
+    });
   }
 
   async delete(id) {

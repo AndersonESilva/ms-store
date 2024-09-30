@@ -7,6 +7,7 @@ const productRouter = ({ controller }) => {
     router.get('/products/:id', (req, res) => controller.getProduct(req, res));
     router.get('/products', (req, res) => controller.getAllProducts(req, res));
     router.delete('/products/:id', (req, res) => controller.deleteProduct(req, res));
+    router.put('/products/:id', (req, res) => controller.updateProduct(req, res));
   
     return router;
 };

@@ -4,6 +4,7 @@ class ProductController {
       this.getProductService = service.get;
       this.getAllProductsService = service.getAll;
       this.deleteProductService = service.delete;
+      this.updateProductService = service.update;
     }
   
     async createProduct(req, res) {
@@ -24,6 +25,13 @@ class ProductController {
 
     async deleteProduct(req, res) {
       const result = await this.deleteProductService.execute(req.params.id);
+      res.json(result);
+    }
+
+    async updateProduct(req, res) {
+      const { name, description, price } = req.body;
+      const id = req.params.id;
+      const result = await this.updateProductService.execute({ id, name, description, price });
       res.json(result);
     }
   }
