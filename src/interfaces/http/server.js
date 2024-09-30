@@ -1,29 +1,19 @@
 const express = require('express');
 const productRoutes = require('../routes/productRoutes');
 const bodyParser = require('body-parser');
-const initializeDb = require('../../infrastructure/database');
+
+const container = require('../../infrastructure/di/container');
+const controller = container.resolve('controller');
+const database = container.resolve('database');
 
 const app = express();
 const port = 3000;
 
-const dbConfig = require('../../../config/database');
-// const env = process.env.NODE_ENV || 'development';
-const env = 'development';
-
-const dbConfigx = dbConfig[env];
-
-const config = Object.assign({
-  env: env,
-  db: dbConfigx
-});
-
-const db = initializeDb({ config });
-
 app.use(bodyParser.json());
 
-app.use('/api', productRoutes(db));
+app.use('/api', productRoutes({controller}));
 
-db.sequelize.authenticate()
+database.sequelize.authenticate()
   .then(() => {
     console.log('Conexão com o banco de dados estabelecida com sucesso.');
     app.listen(port, () => {

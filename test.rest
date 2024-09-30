@@ -4,13 +4,13 @@ POST http://localhost:13000/api/products
 Content-Type: application/json
 
 {
-    "name": "Luck",
+    "name": "Good",
     "description": "11 hello world street",
-    "price": 14.1
+    "price": 11.11
 }
 
 ###
-GET http://localhost:13000/api/products/6a44e9d5-35b9-4805-850d-7d975895cb44
+GET http://localhost:13000/api/products/7b40ed64-6f87-4b5c-b804-5008353cc3aa
 Content-Type: application/json
 
 

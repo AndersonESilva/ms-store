@@ -1,8 +1,8 @@
 class ProductController {
-    constructor(createProductService, getProductService, getAllProductsService) {
-      this.createProductService = createProductService;
-      this.getProductService = getProductService;
-      this.getAllProductsService = getAllProductsService;
+    constructor(service) {
+      this.createProductService = service.create;
+      this.getProductService = service.get;
+      this.getAllProductsService = service.getAll;
     }
   
     async createProduct(req, res) {

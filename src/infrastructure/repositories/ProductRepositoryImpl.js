@@ -2,25 +2,25 @@
 const ProductRepository = require('../../domain/repositories/ProductRepository');
 
 class ProductRepositoryImpl extends ProductRepository {
-  constructor(db) {
+  constructor(model) {
     super();
-    this.Product = db.models.Product;
+    this.model = model;
   }
 
   async create(product) {
-    return await this.Product.create(product);
+    return await this.model.create(product);
   }
 
   async findById(productId) {
-    return await this.Product.findByPk(productId);
+    return await this.model.findByPk(productId);
   }
 
   async findAll() {
-    return await this.Product.findAll();
+    return await this.model.findAll();
   }
 
   async update(product) {
-    const productToUpdate = await this.Product.findById(product.id);
+    const productToUpdate = await this.model.findById(product.id);
     if (productToUpdate) {
       return productToUpdate.update(product);
     }
